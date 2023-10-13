@@ -1,0 +1,4 @@
+evadb_data/*
+__pycache__/*
+evadb-venv/*
+.devcontainer/*
