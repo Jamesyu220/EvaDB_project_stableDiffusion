@@ -2,3 +2,7 @@ evadb_data/*
 __pycache__/*
 evadb-venv/*
 .devcontainer/*
+pandas_qa/*
+privategpt/*
+story_qa/*
+youtube_qa/*
