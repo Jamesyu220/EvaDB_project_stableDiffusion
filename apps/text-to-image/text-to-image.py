@@ -37,8 +37,8 @@ def get_user_input():
 
 # to set the replicate API token environment variable
 def set_replicate_token() -> None:
-    key = 'r8_4vh07os7RJTeSrcuQT7tCFtcJDDOqJE4LbaZp'
-    # key = input('Enter your Replicate API Token: ').strip()
+    # key = 'r8_4vh07os7RJTeSrcuQT7tCFtcJDDOqJE4LbaZp'
+    key = input('Enter your Replicate API Token: ').strip()
 
     try:
         os.environ['REPLICATE_API_TOKEN'] = key
@@ -50,8 +50,8 @@ def set_replicate_token() -> None:
 
 # to set the OpenAI API token environment variable
 def set_openai_token() -> None:
-    key = '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'
-    # key = input('Enter your OpenAI API Token: ').strip()
+    # key = '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'
+    key = input('Enter your OpenAI API Token: ').strip()
 
     try:
         os.environ['OPENAI_KEY'] = key
