@@ -56,15 +56,6 @@ class DallEFunction(AbstractFunction):
         try_to_import_openai()
         import openai
 
-        # Register API key, try configuration manager first
-        openai.api_key = ConfigurationManager().get_value("third_party", "OPENAI_KEY")
-        # If not found, try OS Environment Variable
-        if len(openai.api_key) == 0:
-            openai.api_key = os.environ.get("OPENAI_KEY", "")
-        assert (
-            len(openai.api_key) != 0
-        ), "Please set your OpenAI API key in evadb.yml file (third_party, open_api_key) or environment variable (OPENAI_KEY)"
-
         def generate_image(text_df : PandasDataframe):
             results = []
             queries = text_df[text_df.columns[0]]
@@ -77,6 +68,16 @@ class DallEFunction(AbstractFunction):
                 results.append(response['data'][0]['url'])
             return results
 
-        df = pd.DataFrame({"response":generate_image(text_df=text_df)})
+        # Register API key, try configuration manager first
+        openai.api_key = ConfigurationManager().get_value("third_party", "OPENAI_KEY")
+        # If not found, try OS Environment Variable
+        if len(openai.api_key) == 0:
+            openai.api_key = os.environ.get("OPENAI_KEY", "")
+        assert (
+            len(openai.api_key) != 0
+        ), "Please set your OpenAI API key in evadb.yml file (third_party, open_api_key) or environment variable (OPENAI_KEY)"
+
+        images = generate_image(text_df=text_df)
+        df = pd.DataFrame({"response":images})
 
         return df

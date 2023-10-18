@@ -79,7 +79,7 @@ class StableDiffusion(AbstractFunction):
                 )
                 results.append(output[0])
             return results
-
+    
         df = pd.DataFrame({"response":generate_image(text_df=text_df)})
 
         return df
