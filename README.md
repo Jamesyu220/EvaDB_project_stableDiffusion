@@ -3,15 +3,14 @@
 Please refer to the website of EvaDB to setup the environment.  
 https://evadb.readthedocs.io/en/stable/source/overview/getting-started.html  
 
-### Install stable diffusion python tools  
-Please run these codes to install the python tools for image generation:  
-```
-pip install replicate
-pip install openai
+### Install python tools  
+Please install the python tools:  
+```sh
+pip install -r requirements.txt
 ```  
 ### Play with the Text-to-Image transformation
-Please go to the directory apps/text-to-image and run:  
-```
+Please go to the directory text-to-image and run:  
+```sh
 python text-to-image.py
 ```  
 After entering your prompts, you can choose which tool you want, either Replicate, DALL-E, or both.  
