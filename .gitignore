@@ -2,7 +2,3 @@
 **/__pycache__/*
 evadb-venv/*
 .devcontainer/*
-apps/pandas_qa/*
-apps/privategpt/*
-apps/story_qa/*
-apps/youtube_qa/*
